@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Alina ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #ffb6c1, #ff758c);
+        color: white;
+        text-align: center;
+        overflow-x: hidden;
+    }
+    h1 {
+        font-family: "", cursive;
+        font-size: 3.5rem;
+        margin-top: 60px;
+        animation: fadeInDown 2s ease;
+    }
+    p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 20px auto;
+        animation: fadeInUp 2s ease;
+    }
+    .heart {
+        font-size: 2rem;
+        animation: heartbeat 1.5s infinite;
+    }
+    @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+    }
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .photo {
+        margin: 30px auto;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        animation: fadeInUp 2.5s ease;
+    }
+    .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    button {
+        background: white;
+        color: #ff4b6e;
+        border: none;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    button:hover {
+        background: #ff4b6e;
+        color: white;
+    }
+    /* Floating Hearts Animation */
+    .floating-hearts {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 999;
+    }
+    .heart-shape {
+        position: absolute;
+        color: rgba(255,255,255,0.7);
+        font-size: 24px;
+        animation: float 6s linear infinite;
+    }
+    @keyframes float {
+        0% { transform: translateY(100vh) scale(0.8); opacity: 1; }
+        100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+</style>
+</head>
+<body>
+
+<h1>Happy Birthday, Mere Jiger ka Tukda ❤️</h1>
+<div class="photo">
+    <img src="514600627_18045719087547395_8371279956494918737_n.jpg" alt="Your Photo">
+</div>
+<p>
+   Advance Happy Happy Happy Birthday Meri SweetHeart, Aj ka Din apko bht bht Mubarak ho.  
+    aj is din apke sath sath m bhi bht khush hu qk aj k hi din tha jis din ap is duniya m ayi thi. isliye ThankYouuu soo muchhh is duniya m ane k liye ane k bd mjse milne k liye sbke liye ThankYouu soo soooo muchhhhhhh..💕  
+    I’m very Happy to have you in my life.❤️  
+</p>
+<button onclick="playMusic()">Play Our Song 🎶</button>
+
+<audio id="bgMusic" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
+
+<div class="floating-hearts" id="hearts"></div>
+
+<script>
+// Floating Hearts
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart-shape');
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+    document.getElementById('hearts').appendChild(heart);
+    setTimeout(() => { heart.remove(); }, 6000);
+}
+setInterval(createHeart, 500);
+
+// Background Music
+function playMusic() {
+    const music = document.getElementById('bgMusic');
+    music.play();
+    alert("💖 Music Started!");
+}
+</script>
+
+</body>
+</html>
